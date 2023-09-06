@@ -50,6 +50,10 @@ inflation %>%
   ungroup() %>% 
   ggplot() +
   geom_line(aes(date, value, color = name)) +
+    theme_minimal() +
+  ylab("subjective inflation in %-points") +
+  labs(color = "") +
+  theme(legend.position = c(.1, .9)) +
   NULL
 ```
 
@@ -69,9 +73,3 @@ usethis::use_git_config(
   user.email = "kenny.chiu@uea.ac.uk", # <-- and your email
   init.defaultBranch = "main") # <-- not necessary but kinder than 'master'
 usethis::use_git()  
-
-theme_minimal() +
-  ylab("subjective inflation in %-points") +
-  labs(color = "") +
-  theme(legend.position = c(.1, .9)) +
-
